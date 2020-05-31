@@ -128,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crud-amp"
+    }
+  },
+  "defaultProject": "crud-amp",
+  "cli": {
+    "analytics": "7640c15b-d68a-46b2-8166-4283de4910cb"
+  }
 }
