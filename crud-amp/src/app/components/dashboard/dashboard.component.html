@@ -5,18 +5,176 @@
                 <h4 class="text-light">Leomary</h4>
             </div>
             <div class="menu">
-                <a href="users" class="d-block p-3 text-light"><i class="fa fa-user"></i> Usuarios</a>
-                <a href="projects" class="d-block p-3 text-light"><i class="fa fa-building"></i> Proyectos</a>
-                <a href="add" class="d-block p-3 text-light"><i class="fa fa-plus-square"></i> Añadir Proyecto</a>
-                <a href="products" class="d-block p-3 text-light"><i class="fa fa-shopping-cart"></i> Administrar Productos</a>
+                <a href="users" class="d-block p-3 text-light"><i class="fa
+                        fa-user"></i> Usuarios</a>
+                <a href="projects" class="d-block p-3 text-light"><i class="fa
+                        fa-building"></i> Proyectos</a>
+                <a href="add" class="d-block p-3 text-light"><i class="fa
+                        fa-plus-square"></i> Añadir Proyecto</a>
+                <a href="products" class="d-block p-3 text-light"><i class="fa
+                        fa-shopping-cart"></i> Administrar Productos</a>
             </div>
         </div>
-        <div id="content">
-            <section>
-                <div class="conatainer">
-                    <div class="row"></div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row p-4">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title">Editar perfil</h4>
+                                    <p class="card-category">Crear o actualizar
+                                        perfil</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="bmd-label-floating">Nombre</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    id="nombre" [(ngModel)]="usuario.nombre">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="bmd-label-floating">Apellidos</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    id="apellido" [(ngModel)]="usuario.apellidos">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="bmd-label-floating">Nombre
+                                                    de usuario</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    id="username" [(ngModel)]="usuario.username">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="bmd-label-floating">Correo
+                                                    electronico</label>
+                                                <input type="email"
+                                                    class="form-control"
+                                                    id="email" [(ngModel)]="usuario.email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="bmd-label-floating">Contraseña</label>
+                                                <input type="password"
+                                                    name="passwd"
+                                                    class="form-control"
+                                                    id="passwd" [(ngModel)]="usuario.passwd">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Rol de usuario</label>
+                                                <select class="form-control"
+                                                    id="rolUsuario"
+                                                    name="rolUsuario" [(ngModel)]="usuario.rol">
+                                                    <option
+                                                        value="Administrador">Administrador</option>
+                                                    <option value="Usuario">Usuario</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <button (click)="agregarUsuario()" class="btn btn-primary pull-right">Registrar</button>
+                                    <button (click)="editarUsuario()" class="btn btn-secondary pull-rignt">Actualizar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="#pablo">
+                                        <img [src]="'/assets/img/logo.png'" class="img"> </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-category text-gray">Categoria</h6>
+                                    <h4 class="card-title" id="titulo" name="titulo">Titulo</h4> 
+                                    <a href="/" class="btn btn-primary btn-round">Cerrar sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title">Usuarios</h4>
+                                    <p class="card-category">Usuarios
+                                        registrados actualmente</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="text-primary">
+                                                <tr>
+                                                    <th>
+                                                        ID
+                                                    </th>
+                                                    <th>
+                                                        Nombre
+                                                    </th>
+                                                    <th>
+                                                        Apellidos
+                                                    </th>
+                                                    <th>
+                                                        Username
+                                                    </th>
+                                                    <th> 
+                                                        Correo
+                                                    </th>
+                                                    <th>
+                                                        Opciones
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let usuario of usuarios">
+                                                    <td>{{usuario.id}}</td>
+                                                    <td>{{usuario.nombre}}</td>
+                                                    <td>{{usuario.apellidos}}</td>
+                                                    <td>{{usuario.username}}</td>
+                                                    <td>{{usuario.email}}</td>
+                                                    <td><button (click)="borrarUsuario(usuario.id)" class="btn btn-danger">Borrar</button></td>
+                                                    <td><button (click)="seleccionarUsuario(usuario.id)" class="btn btn-info">Editar</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
