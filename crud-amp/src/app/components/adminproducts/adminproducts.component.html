@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
                                     <select class="form-control">
-                                        <option value="">Categorias</option>
+                                        <option value="" >Categorias</option>
                                     </select>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
@@ -34,7 +34,7 @@
                                 </div> 
                                 <div class="form-group mx-sm-3 mb-2">
                                     <select class="form-control">
-                                        <option value="">Departamento</option>
+                                        <option value="{{departamento.id_departamento}}" *ngFor="let departamento of departamentos">{{departamento.nombre_departamento}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
@@ -142,10 +142,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" placeholder="Nombre del departamento">
+                <input type="text" class="form-control" placeholder="Nombre del departamento" [(ngModel)]="departamento.nombre_departamento">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button class="btn btn-primary" (click)="agregarDepartamento()">Guardar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

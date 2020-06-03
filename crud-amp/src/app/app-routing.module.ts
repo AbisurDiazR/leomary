@@ -18,7 +18,8 @@ const routes: Routes = [
   {path:'control',component:DashboardComponent},
   {path:'projects',component:AdminproyectosComponent},
   {path:'add',component:AddprojectComponent},
-  {path:'products',component:AdminproductsComponent}
+  {path:'products',component:AdminproductsComponent},
+  {path:'users',component:DashboardComponent}
 ];
 
 @NgModule({
