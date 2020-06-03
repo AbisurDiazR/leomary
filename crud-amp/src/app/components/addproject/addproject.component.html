@@ -1,0 +1,75 @@
+<div class="mt-5">
+    <div class="d-flex">
+        <div id="sidebar-container" class="bg-primary">
+            <div class="logo">
+                <h4 class="text-light">Leomary</h4>
+            </div>
+            <div class="menu">
+                <a href="users" class="d-block p-3 text-light"><i class="fa
+                        fa-user"></i> Usuarios</a>
+                <a href="projects" class="d-block p-3 text-light"><i class="fa
+                        fa-building"></i> Proyectos</a>
+                <a href="add" class="d-block p-3 text-light"><i class="fa
+                        fa-plus-square"></i> Añadir Proyecto</a>
+                <a href="products" class="d-block p-3 text-light"><i class="fa
+                        fa-shopping-cart"></i> Administrar Productos</a>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title">Proyectos</h4>
+                                    <p class="card-category">Proyectos en los que hemos participado</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Ingrese el nombre del proyecto" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Ingrese la ubicación" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Inicio del proyecto</label>
+                                        <input type="date" class="form-control" min="2000-01-02">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fin del proyecto</label>
+                                        <input type="date" class="form-control" min="2000-01-02">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Defina su rol en el proyecto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Seleccione un cliente</label>
+                                        <select class="form-control">
+                                        </select>
+                                    </div>
+                                    <div class="div-inline">
+                                        <label>Añadir nuevo cliente</label>
+                                        <input class="form-control" type="text" placeholder="Ingrese el nombre del cliente">
+                                        <button class="btn btn-primary mb-2" id="añadirCliente">Añadir cliente</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fotos del proyecto</label>
+                                        <div class="input-group mb-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="multifotos" multiple="">
+                                                <label for="multifotos"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Seleccione las fotos&hellip;</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,6 +5,9 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { AccederComponent } from './components/acceder/acceder.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminproyectosComponent } from './components/adminproyectos/adminproyectos.component';
+import { AddprojectComponent } from './components/addproject/addproject.component';
+import { AdminproductsComponent } from './components/adminproducts/adminproducts.component';
 
 
 const routes: Routes = [
@@ -12,7 +15,10 @@ const routes: Routes = [
   {path:'proyectos',component:ProyectosComponent},
   {path:'acceder',component:AccederComponent},
   {path:'productos',component:ProductosComponent},
-  {path:'control',component:DashboardComponent}
+  {path:'control',component:DashboardComponent},
+  {path:'projects',component:AdminproyectosComponent},
+  {path:'add',component:AddprojectComponent},
+  {path:'products',component:AdminproductsComponent}
 ];
 
 @NgModule({
