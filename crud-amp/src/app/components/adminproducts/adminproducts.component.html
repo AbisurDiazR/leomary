@@ -22,10 +22,10 @@
                         <div class="col-xl-12">
                             <div class="div-inline">
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <input type="text" class="form-control" placeholder="Ingrese la clave del producto">
+                                    <input type="text" class="form-control" placeholder="Ingrese la clave del producto" [(ngModel)]="producto.clave_producto">
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="producto.categoria_producto">
                                         <option value="{{categoria.id_categoria}}" *ngFor="let categoria of categorias">{{categoria.nombre_categoria}}</option>
                                     </select>
                                 </div>
@@ -33,7 +33,7 @@
                                     <a href="#" data-target="#newCategoria" data-toggle="modal"><i class="fa fa-plus-square"></i>Categoria</a>
                                 </div> 
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <select class="form-control">
+                                    <select class="form-control" [(ngModel)]="producto.departamento_producto">
                                         <option value="{{departamento.id_departamento}}" *ngFor="let departamento of departamentos">{{departamento.nombre_departamento}}</option>
                                     </select>
                                 </div>
@@ -41,13 +41,13 @@
                                     <a href="#" data-target="#newDepartamento" data-toggle="modal"><i class="fa fa-plus-square"></i>Departamento</a>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <input type="text" class="form-control" placeholder="Concepto del producto">
+                                    <input type="text" class="form-control" placeholder="Concepto del producto" [(ngModel)]="producto.concepto_producto">
                                 </div>
                             </div>
 
                             <div class="div-inline">                                
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <input type="number" class="form-control" placeholder="Precio del producto">
+                                    <input type="number" class="form-control" placeholder="Precio del producto" [(ngModel)]="producto.precio_producto">
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
                                     <input type="text" name="file" placeholder="Nombre archivo" class="form-control" [(ngModel)]="archivoImagen.nombreArchivo">
@@ -59,7 +59,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2">
-                                    <button class="btn btn-primary" (click)="upload()">Agregar</button>
+                                    <button class="btn btn-primary" (click)="agregarProducto()">Agregar</button>
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <button class="btn btn-secondary" (click)="editarProducto()">Actualizar</button>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +103,19 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr *ngFor="let producto of productos">
+                                                    <td>{{producto.clave_producto}}</td>
+                                                    <td>{{producto.nombre_categoria}}</td>
+                                                    <td>{{producto.nombre_departamento}}</td>
+                                                    <td>{{producto.concepto_producto}}</td>
+                                                    <td>{{producto.precio_producto}}</td>
+                                                    <td>
+                                                        <button class="btn btn-primary" (click)="seleccionarProducto(producto.id_producto)">Editar</button>
+                                                    </td>
+                                                    <td>                                                        
+                                                        <button class="btn btn-secondary" (click)="borrarProducto(producto.id_producto)">Borrar</button>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

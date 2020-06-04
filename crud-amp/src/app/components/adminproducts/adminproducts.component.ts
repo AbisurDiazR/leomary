@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DepartamentosService } from 'src/app/services/departamentos.service';
 import { CategoriasService } from 'src/app/services/categorias.service';
 import { UploadimageService } from 'src/app/services/uploadimage.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-adminproducts',
@@ -32,12 +33,26 @@ export class AdminproductsComponent implements OnInit {
     base64textString: null
   }
 
+  //variables para administrar productos
+  productos = null;
+
+  producto = {
+    id_producto: null,
+    clave_producto: null,
+    categoria_producto: null,
+    departamento_producto: null,
+    concepto_producto: null,
+    precio_producto: null,
+    foto_producto: null
+  }
+
   constructor(private departamentosService: DepartamentosService, private categoriasService: CategoriasService
-    , private uploadService: UploadimageService) { }
+    , private uploadService: UploadimageService, private productoService: ProductosService) { }
 
   ngOnInit(): void {
     this.obtenerDepartamentos();
     this.obtenerCategorias();
+    this.obtenerProductos();
   }
 
   //metodos para los departamentos
@@ -101,6 +116,60 @@ export class AdminproductsComponent implements OnInit {
       datos => {
         if (datos['resultado']=='OK') {
           alert(datos['mensaje']);
+        }
+      }
+    );
+  }
+
+  //metod para agregar producto
+  agregarProducto(){
+    this.producto.foto_producto = this.archivoImagen.nombreArchivo;
+    this.productoService.agregarProducto(this.producto).subscribe(
+      datos => {
+        if (datos['resultado']=='OK') {
+          alert(datos['mensaje']);
+          this.upload();
+          this.obtenerProductos();
+        }
+      }
+    );
+  }
+
+  //metodo para obtener productos
+  obtenerProductos(){
+    this.productoService.obtenerProductos().subscribe(
+      result => this.productos = result
+    );
+  }
+
+  //metodo para selccionar producto
+  seleccionarProducto(id:number){
+    this.productoService.seleccionarProducto(id).subscribe(
+      result => this.producto = result[0]
+    );
+  }
+
+  //metodo para borrar producto
+  borrarProducto(id:number){
+    this.productoService.borrarProducto(id).subscribe(
+      datos => {
+        if (datos['resultado']=='OK') {
+          alert(datos['mensaje']);
+          this.obtenerProductos();
+        }
+      }
+    );
+  }
+
+  //metodo para actualizar producto
+  editarProducto(){
+    this.producto.foto_producto = this.archivoImagen.nombreArchivo;
+    this.productoService.editarProducto(this.producto).subscribe(
+      datos => {
+        if (datos['resultado']=='OK') {
+          alert(datos['mensaje']);
+          this.upload();
+          this.obtenerProductos();
         }
       }
     );
