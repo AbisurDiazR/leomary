@@ -100,13 +100,14 @@ export class AdminproductsComponent implements OnInit {
     if (files && file) {
       var reader = new FileReader();
       reader.onload = this._handleReaderLoaded.bind(this);
-      reader.readAsBinaryString(file);
+      reader.readAsBinaryString(file);      
     }
   }
 
   _handleReaderLoaded(readerEvent){
     var binaryString = readerEvent.target.result;
     this.archivoImagen.base64textString = btoa(binaryString);
+    console.log(this.archivoImagen);
   }
 
   //metodo para subir imagen

@@ -2,4 +2,126 @@
     <div class="row">
         <img [src]="'assets/img/banner.jpg'" class="img-fluid">
     </div>
+    <!--<div class="row" *ngFor="let foto of fotos">
+        <h1>{{foto.nombre_foto}}</h1>
+        <h2>{{foto.proyecto_foto}}</h2>
+    </div>-->
+    <div class="row" *ngFor="let proyecto of proyectos">
+        <div class="container container-fluid">
+            <hr class='featurette-divider'>
+            <div class="row featurette">
+                <div class="col">
+                    <h2 class="featurette-heading"></h2>
+                    <p class="lead">Ubicacion: {{proyecto.ubicacion_proyecto}}</p>
+                    <p class="lead">Fecha de inicio:
+                        {{proyecto.inicio_proyecto}}</p>
+                    <p class="lead">Fecha de fin: {{proyecto.fin_proyecto}}</p>
+                    <p class="lead">Rol de la empresa: {{proyecto.rol_proyecto}}</p>
+                    <p class="lead">Cliente del proyecto:
+                        {{proyecto.nombre_cliente}}</p>
+                </div>
+                <div class="col">
+                    <<!--div id="demo" class="carousel slide"
+                        data-ride="carousel">
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0"
+                                class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" *ngFor="let foto
+                                of fotos">
+                                <img class="d-block w-100"
+                                    src="http://localhost/upload/{{foto.nombre_foto}}"
+                                    alt="Los Angeles" style="width: auto;
+                                    height: 500;">
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#demo"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>-->
+                    <section class="carousel" aria-label="Gallery">
+                        <ol class="carousel__viewport">
+                            <li id="carousel__slide1"
+                                tabindex="0"
+                                class="carousel__slide">
+                                <div class="carousel__snapper">
+                                    <a href="#carousel__slide4"
+                                        class="carousel__prev">Go to last slide</a>
+                                    <a href="#carousel__slide2"
+                                        class="carousel__next">Go to next slide</a>
+                                </div>
+                            </li>
+                            <li id="carousel__slide2"
+                                tabindex="0"
+                                class="carousel__slide">
+                                <div class="carousel__snapper"></div>
+                                <a href="#carousel__slide1"
+                                    class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide3"
+                                    class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide3"
+                                tabindex="0"
+                                class="carousel__slide">
+                                <div class="carousel__snapper"></div>
+                                <a href="#carousel__slide2"
+                                    class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide4"
+                                    class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide4"
+                                tabindex="0"
+                                class="carousel__slide">
+                                <div class="carousel__snapper"></div>
+                                <a href="#carousel__slide3"
+                                    class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide1"
+                                    class="carousel__next">Go to first slide</a>
+                            </li>
+                        </ol>
+                        <aside class="carousel__navigation">
+                            <ol class="carousel__navigation-list">
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide1"
+                                        class="carousel__navigation-button">Go
+                                        to slide 1</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide2"
+                                        class="carousel__navigation-button">Go
+                                        to slide 2</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide3"
+                                        class="carousel__navigation-button">Go
+                                        to slide 3</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide4"
+                                        class="carousel__navigation-button">Go
+                                        to slide 4</a>
+                                </li>
+                            </ol>
+                        </aside>
+                    </section>
+                    <!--<div class="carousel-inner">
+                        <img class="d-block w-100"
+                            src="http://localhost/upload/{{foto.nombre_foto}}"
+                            alt="" *ngFor="let foto of fotos" style='width:
+                            auto; height: 500;'>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

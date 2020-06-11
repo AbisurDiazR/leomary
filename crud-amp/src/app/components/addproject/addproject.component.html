@@ -28,25 +28,25 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Ingrese el nombre del proyecto" class="form-control">
+                                        <input type="text" placeholder="Ingrese el nombre del proyecto" class="form-control" [(ngModel)]="proyecto.nombre_proyecto">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" placeholder="Ingrese la ubicación" class="form-control">
+                                        <input type="text" placeholder="Ingrese la ubicación" class="form-control" [(ngModel)]="proyecto.ubicacion_proyecto">
                                     </div>
                                     <div class="form-group">
                                         <label>Inicio del proyecto</label>
-                                        <input type="date" class="form-control" min="2000-01-02">
+                                        <input type="date" class="form-control" min="2000-01-02" [(ngModel)]="proyecto.inicio_proyecto">
                                     </div>
                                     <div class="form-group">
                                         <label>Fin del proyecto</label>
-                                        <input type="date" class="form-control" min="2000-01-02">
+                                        <input type="date" class="form-control" min="2000-01-02" [(ngModel)]="proyecto.fin_proyecto">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Defina su rol en el proyecto">
+                                        <input type="text" class="form-control" placeholder="Defina su rol en el proyecto" [(ngModel)]="proyecto.rol_proyecto">
                                     </div>
                                     <div class="form-group">
                                         <label>Seleccione un cliente</label>
-                                        <select class="form-control">
+                                        <select class="form-control" [(ngModel)]="proyecto.cliente_proyecto">
                                             <option value="{{cliente.id_cliente}}" *ngFor="let cliente of clientes">{{cliente.nombre_cliente}}</option>
                                         </select>
                                     </div>
@@ -67,7 +67,9 @@
                                     <div class="form-group">
                                         <img *ngFor="let url of urls" [src]="url" alt="..." class="img-thumbnail" width="200" height="200">
                                     </div>
-                                    <button class="btn btn-primary">Agregar</button>
+                                    <br>
+                                    <span [innerHTML]="result"></span>
+                                    <button class="btn btn-primary" (click)="agregarProyecto()">Agregar</button>
                                 </div>
                             </div>
                         </div>
