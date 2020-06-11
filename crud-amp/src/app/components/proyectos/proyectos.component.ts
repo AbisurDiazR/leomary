@@ -12,28 +12,31 @@ export class ProyectosComponent implements OnInit {
 
   proyectos = null;
 
+  slideConfig = {  
+    "slidesToShow": 3,  
+    "slidesToScroll": 3,  
+    "dots": true,  
+    "infinite": true  
+  }; 
+
   constructor(private proyectosService: ProyectosService) { }
 
   ngOnInit(): void {
     this.obtenerFotos();
     this.obtenerProyectos();
+    //this.loadUrls();
   }
 
   obtenerFotos(){
-    return this.proyectosService.obtenerFotos().subscribe(
+    this.proyectosService.obtenerFotos().subscribe(
       result => this.fotos = result
-    );    
+    );
+        
   }
 
   obtenerProyectos(){
     return this.proyectosService.obtenerProyectos().subscribe(
       result => this.proyectos = result
-    );
-  }
-
-  obtenerFoto(id_proyecto:number){
-    return this.proyectosService.obtenerFoto(id_proyecto).subscribe(
-      result => this.fotos = result
     );
   }
 

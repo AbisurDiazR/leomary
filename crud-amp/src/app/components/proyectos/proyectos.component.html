@@ -21,34 +21,11 @@
                         {{proyecto.nombre_cliente}}</p>
                 </div>
                 <div class="col">
-                    <div id="demo" class="carousel slide"
-                        data-ride="carousel">
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0"
-                                class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
-                        </ul>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" *ngFor="let foto
-                                of fotos">
-                                <img class="d-block w-100"
-                                    src="http://localhost/upload/{{foto.nombre_foto}}"
-                                    alt="Los Angeles" style="width: auto;
-                                    height: 500;">
-                            </div>
-                        </div>
-
-                        <a class="carousel-control-prev" href="#demo"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div>
+                    <mdb-carousel [animation]="'slide'">
+                        <mdb-carousel-item *ngFor="let foto of fotos">
+                            <img *ngIf="(foto.proyecto_foto == proyecto.id_proyecto)" src="http://localhost/upload/{{foto.nombre_foto}}" alt="{{foto.id_foto}}">
+                        </mdb-carousel-item>
+                    </mdb-carousel>
                     <!--<div class="carousel-inner">
                         <img class="d-block w-100"
                             src="http://localhost/upload/{{foto.nombre_foto}}"

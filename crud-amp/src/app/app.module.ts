@@ -5,6 +5,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+//import del carousel
+// For MDB Angular Free
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
+
 //import de los providers
 import { UsuariosService } from './services/usuarios.service';
 
@@ -35,7 +39,9 @@ import { AdminproductsComponent } from './components/adminproducts/adminproducts
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule,
+    WavesModule
   ],
   providers: [
     UsuariosService
