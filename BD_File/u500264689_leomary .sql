@@ -36,11 +36,11 @@ CREATE TABLE `categorias` (
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
+/*INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
 (1, 'Test categoria'),
 (2, 'Test categoria'),
 (3, 'Test categoria'),
-(4, 'Another category');
+(4, 'Another category');*/
 
 -- --------------------------------------------------------
 
@@ -57,11 +57,11 @@ CREATE TABLE `clientes` (
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`) VALUES
+/*INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`) VALUES
 (1, 'Samsung'),
 (2, 'Mitsubishi'),
 (3, 'Toshiba'),
-(4, 'Apple');
+(4, 'Apple');*/
 
 -- --------------------------------------------------------
 
@@ -78,10 +78,10 @@ CREATE TABLE `departamentos` (
 -- Volcado de datos para la tabla `departamentos`
 --
 
-INSERT INTO `departamentos` (`id_departamento`, `nombre_departamento`) VALUES
+/*INSERT INTO `departamentos` (`id_departamento`, `nombre_departamento`) VALUES
 (1, 'Ferreteria'),
 (2, 'Plomeria'),
-(3, 'Electricidad');
+(3, 'Electricidad');*/
 
 -- --------------------------------------------------------
 
@@ -99,10 +99,10 @@ CREATE TABLE `fotos` (
 -- Volcado de datos para la tabla `fotos`
 --
 
-INSERT INTO `fotos` (`id_foto`, `nombre_foto`, `proyecto_foto`) VALUES
+/*INSERT INTO `fotos` (`id_foto`, `nombre_foto`, `proyecto_foto`) VALUES
 (104, 'believe_in_fox_god-20160828-0001-20200611010753.jpg', 27),
 (105, 'moa-20200611010753.jpg', 27),
-(106, 'otfgk_metal-20160828-0001-20200611010753.jpg', 27);
+(106, 'otfgk_metal-20160828-0001-20200611010753.jpg', 27);*/
 
 -- --------------------------------------------------------
 
@@ -124,12 +124,12 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id_producto`, `clave_producto`, `categoria_producto`, `departamento_producto`, `concepto_producto`, `precio_producto`, `foto_producto`) VALUES
+/*INSERT INTO `productos` (`id_producto`, `clave_producto`, `categoria_producto`, `departamento_producto`, `concepto_producto`, `precio_producto`, `foto_producto`) VALUES
 (7, 'CL04', 1, 3, 'Chun Li', 234, '99010919_10158285283754844_2396554406427361280_o.jpg'),
 (8, 'CL05', 4, 2, 'Gorgon', 500, 'a5ehI15EeKSc9Ap1AkztQ2iAoSCNrn5RiAI2Qh30vVU.jpg'),
 (9, 'CLA33', 1, 1, 'Concept test', 124, '17evjv7ms8pcwjpg.jpg'),
 (10, 'CALA', 2, 2, 'CNC', 5555, '63472_880664348646041_2652543141420487093_n.jpg'),
-(11, 'OOL', 1, 2, 'CCCC', 233, '1510726_10204931208667217_9130594845715522394_n.jpg');
+(11, 'OOL', 1, 2, 'CCCC', 233, '1510726_10204931208667217_9130594845715522394_n.jpg');*/
 
 -- --------------------------------------------------------
 
@@ -151,8 +151,8 @@ CREATE TABLE `proyectos` (
 -- Volcado de datos para la tabla `proyectos`
 --
 
-INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `ubicacion_proyecto`, `inicio_proyecto`, `fin_proyecto`, `rol_proyecto`, `cliente_proyecto`) VALUES
-(27, 'aaaaaaaaaa', 'aaaaa', '2020-12-31', '2020-12-31', 'aaaaaaaaaa', 2);
+/*INSERT INTO `proyectos` (`id_proyecto`, `nombre_proyecto`, `ubicacion_proyecto`, `inicio_proyecto`, `fin_proyecto`, `rol_proyecto`, `cliente_proyecto`) VALUES
+(27, 'aaaaaaaaaa', 'aaaaa', '2020-12-31', '2020-12-31', 'aaaaaaaaaa', 2);*/
 
 -- --------------------------------------------------------
 
@@ -174,9 +174,9 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `username`, `email`, `passwd`, `rol`) VALUES
+/*INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `username`, `email`, `passwd`, `rol`) VALUES
 (1, 'Abisur', 'Diaz Ramirez', 'admin', 'abisurdiazramirez@gmail.com', 'aiShinozaki23', 'administrador'),
-(6, 'Abisur Simei', 'Ramirez', 'koizumi1993', 'abisurdiazramirez@gmail.com', 'aiShinozaki23', 'Administrador');
+(6, 'Abisur Simei', 'Ramirez', 'koizumi1993', 'abisurdiazramirez@gmail.com', 'aiShinozaki23', 'Administrador');*/
 
 --
 -- Índices para tablas volcadas
