@@ -38,13 +38,13 @@
                                                         Ubicacion
                                                     </th>
                                                     <th>
-                                                        Inicion
+                                                        Inicio
                                                     </th>
                                                     <th>
                                                         Fin
                                                     </th>
                                                     <th> 
-                                                        Escala
+                                                        Rol
                                                     </th>
                                                     <th>
                                                         Cliente
@@ -52,6 +52,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr *ngFor="let proyecto of proyectos">
+                                                    <td>{{proyecto.nombre_proyecto}}</td>
+                                                    <td>{{proyecto.ubicacion_proyecto}}</td>
+                                                    <td>{{proyecto.inicio_proyecto}}</td>
+                                                    <td>{{proyecto.fin_proyecto}}</td>
+                                                    <td>{{proyecto.rol_proyecto}}</td>
+                                                    <td>{{proyecto.nombre_cliente}}</td>
+                                                    <td>
+                                                        <button class="btn btn-secondary" (click)="borrarProyecto(proyecto.id_proyecto)">Borrar</button>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

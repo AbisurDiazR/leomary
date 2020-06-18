@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'proyectos',component:ProyectosComponent},
   {path:'acceder',component:AccederComponent},
-  {path:'productos',component:ProductosComponent},
+  {path:'listaproductos',component:ProductosComponent},
   {path:'control',component:DashboardComponent},
   {path:'projects',component:AdminproyectosComponent},
   {path:'add',component:AddprojectComponent},

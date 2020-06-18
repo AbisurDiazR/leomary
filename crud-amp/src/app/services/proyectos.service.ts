@@ -29,11 +29,15 @@ export class ProyectosService {
   }
 
   obtenerFoto(id_proyecto){
-    return this.http.get(`${this.URL}seleccionarFoto.php?id_proyecto=${id_proyecto}`)
+    return this.http.get(`${this.URL}seleccionarFoto.php?id_proyecto=${id_proyecto}`);
   }
   
 
   subirImagen(formData){
     return this.http.post(`${this.url}upload.php`,formData);
+  }
+
+  borrarProyecto(id_proyecto){
+    return this.http.get(`${this.URL}borrarProyecto.php?id_proyecto=${id_proyecto}`);
   }
 }

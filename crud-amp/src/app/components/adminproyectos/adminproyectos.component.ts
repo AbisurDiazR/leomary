@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes.service';
+import { ProyectosService } from 'src/app/services/proyectos.service';
 
 @Component({
   selector: 'app-adminproyectos',
@@ -8,6 +9,8 @@ import { ClientesService } from 'src/app/services/clientes.service';
 })
 export class AdminproyectosComponent implements OnInit {
 
+  proyectos = null;
+
   clientes = null;
 
   cliente = {
@@ -15,10 +18,11 @@ export class AdminproyectosComponent implements OnInit {
     nombre_cliente: null
   }
 
-  constructor(private clientesService: ClientesService) { }
+  constructor(private clientesService: ClientesService, private proyectosService: ProyectosService) { }
 
   ngOnInit(): void {
     this.obtenerClientes();
+    this.obtenerProyectos();
   }
 
   //metodo para obtener clientes
@@ -36,6 +40,25 @@ export class AdminproyectosComponent implements OnInit {
           alert(datos['mensaje']);
           this.obtenerClientes();
         }
+      }
+    );
+  }
+
+  //obtener proyectos
+  obtenerProyectos(){
+    return this.proyectosService.obtenerProyectos().subscribe(
+      result => this.proyectos = result
+    );
+  }
+
+  //eliminar proyectos
+  borrarProyecto(id_proyecto:number){
+    return this.proyectosService.borrarProyecto(id_proyecto).subscribe(
+      datos => {
+        if (datos['resultado']=='OK') {
+          alert(datos['mensaje']);
+          this.obtenerProyectos();
+        }        
       }
     );
   }
